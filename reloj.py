@@ -8,7 +8,7 @@ except:
     locale.setlocale(locale.LC_ALL, "es_ES")
 
 ROOT = tk.Tk()
-ROOT.geometry("300x100")
+ROOT.geometry("350x110")
 ROOT.title("Hora actual")
 ROOT.configure(bg="Black")
 
@@ -22,7 +22,7 @@ lblReloj.pack()
 
 def reloj():
     global hora
-    hora = time.strftime("%H:%M")
+    hora = time.strftime("%I:%M %p").lower()
     lblReloj.config(text=hora)
     lblReloj.after(1000, reloj)
 
