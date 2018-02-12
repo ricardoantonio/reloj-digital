@@ -13,18 +13,19 @@ ROOT.title("Hora actual")
 ROOT.configure(bg="Black")
 
 fecha = time.strftime("%A, %d de %B de %Y")
-lblFecha = tk.Label(ROOT, text=fecha, fg="green", bg="black")
+lblFecha = tk.Label(ROOT, text=fecha, fg="white",
+                    bg="black", font=("Arial", 16))
 lblFecha.pack()
-lblReloj = tk.Label(ROOT, text="00:00", fg="green",
-                    bg="black", font=("", 70))
+lblReloj = tk.Label(ROOT, text="00:00", fg="white",
+                    bg="black", font=("Arial Black", 50))
 lblReloj.pack()
 
 
 def reloj():
     global hora
-    hora = time.strftime("%I:%M %p").lower()
+    hora = time.strftime("%I:%M:%S %p").lower()
     lblReloj.config(text=hora)
-    lblReloj.after(1000, reloj)
+    lblReloj.after(500, reloj)
 
 
 reloj()
